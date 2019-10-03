@@ -1,1 +1,39 @@
-
+<html>
+  <body>
+    <h1> Explanation A2-A5! </h1>
+    <h2> A2</h2>
+            <p> A2 we only wanted to find the mean quize score of pen one. 
+              <pre>
+              var answer= d3.mean(classroom[0].quizes, getGrade)
+              </pre>
+           d3.mean is being used to give us a mean of an array of elements, and in this case the array of quize grades within
+            the first penguin. getGrade previously was defined as the quiz grades, and gives the command to pull them.
+    </p>
+    <h2> A3</h2>
+            <p> To solve A3 we wanted to find the mean of quize grades for an individual penguin, by creating a function. 
+              Therefore, we created the code:
+              <pre> var getBob= function(penguin)
+    {
+        return d3.mean(penguin.quizes,getGrade);
+    }
+        var answer= getBob(classroom[1]); </pre>
+                Firstly, we needed to give a name to our function (getBob). The function, inside the brackets, takes 
+                the means of the quize grades of all the penguins. Secondly, in the last line of code the second penguin needs
+                to be called to individually find the mean of its quize grades by calling (classroom[1]).
+            </p>
+    <h2> A4 </h4>
+<p> <pre> var answer= classroom.map(getBob); </pre>
+For A4 we wanted the mean quiz score of each penguin individually, so an array of means. Therefore, by stating classroom map will
+take all the elements within classroom, and getBob was previously defined as a function of all the penguins. In result, map takes
+the arrays of classroom objects and transforms them through the function to create an array of defined number, or in this case
+all of the means of each penguin into an array. 
+</p>
+<h2> A5 </h2> 
+  <p> <pre> var getJo= d3.mean(classroom.map(getBob));
+var answer= getJo;
+ </pre>
+    Now that we have the mean quize scores of all the penguins, A5 only wants us to find the mean of the array. Using d3.mean gives 
+    us the mean of the array we found in A4. Calling is getJo was only to identify it inside the var answer=. 
+</p>
+</body>
+</html>
